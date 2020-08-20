@@ -1,3 +1,4 @@
+import 'package:custom_button_demo/widgets/my_button.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -55,39 +56,11 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 32.0),
-              child: Container(
-                height: 64,
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  color: Colors.red,
-                  borderRadius: BorderRadius.circular(4),
-                  boxShadow: [
-                    BoxShadow(
-                      blurRadius: 4,
-                      color: Colors.grey,
-                      spreadRadius: 0,
-                    ),
-                  ],
-                ),
-                child: Material(
-                  color: Colors.transparent,
-                  child: InkWell(
-                    borderRadius: BorderRadius.circular(4),
-                    highlightColor: Colors.blue.withOpacity(.3),
-                    splashColor: Colors.green.withOpacity(.2),
-                    onTap: _incrementCounter,
-                    child: Center(
-                      child: Text(
-                        'This is a button!',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 18,
-                          fontWeight: FontWeight.w600,
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
+              child: MyButton(
+                title: 'New Title',
+                onTap: () {
+                  print('Diff print statement');
+                },
               ),
             )
           ],
